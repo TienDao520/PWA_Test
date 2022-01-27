@@ -46,7 +46,7 @@ const onShareFile = async () => {
   const url = elements.urlInput.value;
   const files = elements.fileInput.files;
   try {
-    if (navigator.canShare && navigator.canShare({ files: files })) {
+    if (navigator.canShare && navigator.canShare({ files: [] })) {
       await navigator.share({
         title,
         text,
@@ -56,7 +56,7 @@ const onShareFile = async () => {
     } else {
     }
   } catch (err) {
-    console.error("Could not open share dialog", e);
+    console.error("Could not open share dialog", err);
   }
 };
 
