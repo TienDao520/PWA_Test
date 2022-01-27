@@ -1,7 +1,7 @@
 {
   "name": "Sharing Test",
   "short_name": "Sharing Test",
-  "start_url": "https://dev.localhost/",
+  "start_url": "https://tiendao520.github.io/PWA_Test/",
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#aac8da",
