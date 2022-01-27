@@ -5,6 +5,7 @@ const elements = {
   urlInput: document.querySelector("#url"),
   fileInput: document.querySelector("#files"),
   shareBtn: document.querySelector("#share"),
+  shareFilesBtn: document.querySelector("#shareFiles"),
 };
 
 if (window.location.href.includes("article")) {
@@ -43,10 +44,21 @@ const onShareFile = async () => {
   const title = elements.titleInput.value;
   const text = elements.textInput.value;
   const url = elements.urlInput.value;
+  const files = elements.urlInput.files;
   try {
-    if (navigator.canShare && navigator.canShare({ files: [] })) {
+    if (navigator.canShare && navigator.canShare({ files: files })) {
+      await navigator.share({
+        title,
+        text,
+        files,
+      });
+      console.log("Opened share sheet successfully", { title, text, files });
+    } else {
     }
-  } catch (err) {}
+  } catch (err) {
+    console.error("Could not open share dialog", e);
+  }
 };
 
 elements.shareBtn.addEventListener("click", onShare);
+elements.shareFilesBtn.addEventListener("click", onShareFile);
