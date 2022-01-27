@@ -1,6 +1,6 @@
 {
-  "name": "Shortcut Test",
-  "short_name": "Shortcut Test",
+  "name": "Sharing Test",
+  "short_name": "Sharing Test",
   "start_url": "https://dev.localhost/",
   "display": "fullscreen",
   "orientation": "portrait",

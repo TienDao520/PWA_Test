@@ -44,7 +44,7 @@ const onShareFile = async () => {
   const title = elements.titleInput.value;
   const text = elements.textInput.value;
   const url = elements.urlInput.value;
-  const files = elements.urlInput.files;
+  const files = elements.fileInput.files;
   try {
     if (navigator.canShare && navigator.canShare({ files: files })) {
       await navigator.share({
